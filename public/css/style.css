@@ -1,0 +1,19 @@
+h3{
+    color: gray;
+}
+img{
+    width:250px;height: 250px;
+}
+
+input{
+    border:1px solid #cccccc;
+    padding: 8px;
+}
+
+button{
+    padding: 8px;
+    color: white;
+    background: #888888;
+    border:1px solid #cccccc;
+    cursor: pointer;
+}
