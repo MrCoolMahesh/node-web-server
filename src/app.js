@@ -29,7 +29,7 @@ app.get('/',(req,res)=>{
 
 app.get('/about',(req,res)=>{
     console.log('about start')
-    res.render('about',{title:"About me",name:"Maahesh"})
+    res.render('userdata',{title:"About me",name:"Maahesh"})
     console.log('about end')
 })
 app.get('/weather',(req,res)=>{
@@ -59,6 +59,13 @@ app.get('/help',(req,res)=>{
 app.get('/help/*',(req,res)=>{
     res.render('404',{title:"Error Page",errorMessage:"Help page is not found"})
 })
+app.get('/registration/user',(req,res)=>{
+    console.log(req.body.query)
+    console.log(req.file)
+    console.log(req.files)
+    res.send('Request recieved')
+});
+
 
 app.get('*',(req,res)=>{
     res.render('404',{title:"Error Page",errorMessage:"Page Not Found"})
@@ -68,7 +75,7 @@ app.get('*',(req,res)=>{
 
 //Read form data
 app.post('/registration/user',(req,res)=>{
-    console.log(req.body)
+    console.log(req.body.q)
     console.log(req.file)
     console.log(req.files)
     res.send('Request recieved')
