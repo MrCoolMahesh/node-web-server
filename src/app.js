@@ -24,7 +24,7 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicDirectoryPath));
 
 app.get('/',(req,res)=>{
-    res.render('registration')
+    res.render('userdata')
 });
 
 app.get('/about',(req,res)=>{
@@ -68,7 +68,7 @@ app.get('*',(req,res)=>{
 
 //Read form data
 app.post('/registration/user',(req,res)=>{
-    console.log(req)
+    console.log(req.body)
     console.log(req.file)
     console.log(req.files)
     res.send('Request recieved')
