@@ -2,11 +2,15 @@ const path=require('path');
 const forecast=require('./utils/forecast');
 const geocode=require('./utils/geocode');
 const express=require('express');
+const bodyparser=require('body-parser');
 const hbs=require('hbs');
+
 
 //initiate express server
 const app=express();
 
+//const buffered=app.use(express.raw());
+app.use(express.json());
 //Define paths for express config
 const publicDirectoryPath=path.join(__dirname,'../public');
 const viewsPath=path.join(__dirname,'../templates/views');
@@ -20,7 +24,7 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicDirectoryPath));
 
 app.get('/',(req,res)=>{
-    res.render('index',{title:"Weather"})
+    res.render('registration')
 });
 
 app.get('/about',(req,res)=>{
@@ -61,4 +65,12 @@ app.get('*',(req,res)=>{
 })
 //start the server up and run on port
 
+
+//Read form data
+app.post('/registration/user',(req,res)=>{
+    console.log(req)
+    console.log(req.file)
+    console.log(req.files)
+    res.send('Request recieved')
+});
 app.listen(3000,()=>console.log('server is running on port 3000...'))
