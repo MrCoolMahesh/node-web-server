@@ -5,6 +5,9 @@ const express=require('express');
 const bodyparser=require('body-parser');
 const hbs=require('hbs');
 
+// set port
+const port=process.env.PORT || 3000;
+
 
 //initiate express server
 const app=express();
@@ -80,4 +83,4 @@ app.post('/registration/user',(req,res)=>{
     console.log(req.files)
     res.send('Request recieved')
 });
-app.listen(3000,()=>console.log('server is running on port 3000...'))
+app.listen(port,()=>console.log('server is running on port 3000...'))
