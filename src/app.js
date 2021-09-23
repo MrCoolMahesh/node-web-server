@@ -27,7 +27,7 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicDirectoryPath));
 
 app.get('/',(req,res)=>{
-    res.render('userdata')
+    res.render('index')
 });
 
 app.get('/about',(req,res)=>{
